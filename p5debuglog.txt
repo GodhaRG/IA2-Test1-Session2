@@ -1,0 +1,185 @@
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x842: file p5final.c, line 26.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5final.c:26
+26    a=input();
+(gdb) s
+input () at p5final.c:3
+3   {
+(gdb) n
+5     printf("enter a number\n");
+(gdb) n
+enter a number
+6     scanf("%d",&x);
+(gdb) n
+12
+7     return x;
+(gdb) n
+8   }
+(gdb) n
+main () at p5final.c:27
+27    b=input();
+(gdb) s
+input () at p5final.c:3
+3   {
+(gdb) n
+5     printf("enter a number\n");
+(gdb) n
+enter a number
+6     scanf("%d",&x);
+(gdb) n
+16
+7     return x;
+(gdb) n
+8   }
+(gdb) n
+main () at p5final.c:28
+28    hcf=gcd(a,b);
+(gdb) s
+gcd (a=12, b=16) at p5final.c:12
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p a
+$1 = 12
+(gdb) p b
+$2 = 16
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$3 = 1
+(gdb) n
+15      gcd=i;
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$4 = 1
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$5 = 2
+(gdb) n
+15      gcd=i;
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$6 = 2
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$7 = 3
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$8 = 2
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$9 = 4
+(gdb) n
+15      gcd=i;
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$10 = 4
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$11 = 5
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$12 = 6
+(gdb) p gcd
+$13 = 4
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p i
+$14 = 6
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$15 = 7
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$16 = 4
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$17 = 8
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$18 = 4
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$19 = 9
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$20 = 4
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$21 = 10
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$22 = 4
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$23 = 11
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$24 = 4
+(gdb) n
+14      if(a%i==0&&b%i==0)
+(gdb) p i
+$25 = 12
+(gdb) n
+12    for(int i=1;i<=a&&i<=b;i++)
+(gdb) p gcd
+$26 = 4
+(gdb) n
+17    return gcd;
+(gdb) p gcd
+$27 = 4
+(gdb) n
+18  }
+(gdb) n
+main () at p5final.c:29
+29    output(a,b,hcf);
+(gdb) s
+output (a=12, b=16, gcd=4) at p5final.c:21
+21    printf("the gcd of the numbers %d and %d is %d\n",a,b,gcd);
+(gdb) n
+the gcd of the numbers 12 and 16 is 4
+22  }
+(gdb) n
+main () at p5final.c:30
+30    return 0;
+(gdb) n
+31  }(gdb) n
