@@ -1,0 +1,128 @@
+gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x84c: file p6final.c, line 25.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6final.c:25
+25  {
+(gdb) n
+27    input_string(a);
+(gdb) s
+input_string (a=0x7ffd06fc5e60 "\001") at p6final.c:5
+5     printf("enter the string\n");
+(gdb) n
+enter the string
+6     scanf("%s",a);
+(gdb) n
+hello
+7   }
+(gdb) n
+main () at p6final.c:28
+28    str_reverse(a,r);
+(gdb) s
+str_reverse (a=0x7ffd06fc5e60 "hello", r=0x7ffd06fc5e80 "\260\b`%\235U")
+    at p6final.c:10
+10    int x=0;
+(gdb) n
+11    for (int i=0;a[i]!=0;i++)
+(gdb) n
+13        x=x+1;
+(gdb) p a[i]
+$1 = 104 'h'
+(gdb) n
+11    for (int i=0;a[i]!=0;i++)
+(gdb) n
+13        x=x+1;
+(gdb) p a[i]
+$2 = 101 'e'
+(gdb) n
+11    for (int i=0;a[i]!=0;i++)
+(gdb) n
+13        x=x+1;
+(gdb) p a[i]
+$3 = 108 'l'
+(gdb) n
+11    for (int i=0;a[i]!=0;i++)
+(gdb) n
+13        x=x+1;
+(gdb) p a[i]
+$4 = 108 'l'
+(gdb) n
+11    for (int i=0;a[i]!=0;i++)
+(gdb) n
+13        x=x+1;
+(gdb) p a[i]
+$5 = 111 'o'
+(gdb) n
+11    for (int i=0;a[i]!=0;i++)
+(gdb) n
+15    for(int i=0;i<x+1;i++)
+(gdb) n
+17        r[i]=a[x-i-1];
+(gdb) n
+15    for(int i=0;i<x+1;i++)
+(gdb) p r[i]
+$6 = 111 'o'
+(gdb) n
+17        r[i]=a[x-i-1];
+(gdb) n
+15    for(int i=0;i<x+1;i++)
+(gdb) p r[i]
+$7 = 108 'l'
+(gdb) n
+17        r[i]=a[x-i-1];
+(gdb) n
+15    for(int i=0;i<x+1;i++)
+(gdb) p r[i]
+$8 = 108 'l'
+(gdb) n
+17        r[i]=a[x-i-1];
+(gdb) n
+15    for(int i=0;i<x+1;i++)
+(gdb) p r[i]
+$9 = 101 'e'
+(gdb) n
+17        r[i]=a[x-i-1];
+(gdb) n
+15    for(int i=0;i<x+1;i++)
+(gdb) p r[i]
+$10 = 104 'h'
+(gdb) n
+17        r[i]=a[x-i-1];
+(gdb) n
+15    for(int i=0;i<x+1;i++)
+(gdb) n
+19  }
+(gdb) n
+main () at p6final.c:29
+29    output(a,r);
+(gdb) s
+output (a=0x7ffd06fc5e60 "hello", reversea=0x7ffd06fc5e80 "olleh")
+    at p6final.c:22
+22    printf("%s reversed is %s\n",a,reversea);
+(gdb) n
+hello reversed is olleh
+23  }
+(gdb) n
+main () at p6final.c:30
+30    return 0;
+(gdb) n
+31  }
+(gdb) n
